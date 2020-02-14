@@ -40,7 +40,10 @@ const DatePicker = ({
   submitButtonText = 'Submit',
   selectedDatesTitle = 'Selected Dates',
   initialDate,
+  onMonthChange,
 }) => {
+  console.log("in date picker");
+  alert("here!");
   if (cancelButtonText == null) {
     cancelButtonText = readOnly ? 'Dismiss' : 'Cancel'
   }
