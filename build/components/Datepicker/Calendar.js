@@ -87,7 +87,8 @@ var Calendar = function Calendar(_ref) {
       onRemoveAtIndex = _ref.onRemoveAtIndex,
       cancelButtonText = _ref.cancelButtonText,
       submitButtonText = _ref.submitButtonText,
-      selectedDatesTitle = _ref.selectedDatesTitle;
+      selectedDatesTitle = _ref.selectedDatesTitle,
+      onMonthChange = _ref.onMonthChange;
   var calendar = (0, _react.useRef)(null);
   var classes = useStyles();
 
@@ -100,7 +101,9 @@ var Calendar = function Calendar(_ref) {
 
   var handleMonthChange = (0, _react.useCallback)(function (months) {
     setDisplayDate(function (displayDate) {
-      return _dateUtils.defaultUtils.addMonths(displayDate, months);
+      if (onMonthChange) onMonthChange(displayDate, months);
+
+      _dateUtils.defaultUtils.addMonths(displayDate, months);
     });
   }, [setDisplayDate]);
   (0, _react.useEffect)(function () {

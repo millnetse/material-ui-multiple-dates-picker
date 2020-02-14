@@ -83,7 +83,10 @@ var DatePicker = function DatePicker(_ref) {
       _ref$submitButtonText = _ref.submitButtonText,
       submitButtonText = _ref$submitButtonText === void 0 ? 'Submit' : _ref$submitButtonText,
       _ref$selectedDatesTit = _ref.selectedDatesTitle,
-      selectedDatesTitle = _ref$selectedDatesTit === void 0 ? 'Selected Dates' : _ref$selectedDatesTit;
+      selectedDatesTitle = _ref$selectedDatesTit === void 0 ? 'Selected Dates' : _ref$selectedDatesTit,
+      initialDate = _ref.initialDate,
+      onMonthChange = _ref.onMonthChange;
+  console.log("in date picker");
 
   if (cancelButtonText == null) {
     cancelButtonText = readOnly ? 'Dismiss' : 'Cancel';
@@ -169,7 +172,9 @@ var DatePicker = function DatePicker(_ref) {
     readOnly: readOnly,
     cancelButtonText: cancelButtonText,
     submitButtonText: submitButtonText,
-    selectedDatesTitle: selectedDatesTitle
+    selectedDatesTitle: selectedDatesTitle,
+    initialDate: initialDate,
+    onMonthChange: onMonthChange
   }));
 };
 
