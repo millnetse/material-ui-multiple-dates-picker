@@ -38,7 +38,8 @@ const DatePicker = ({
   selectedDates: outerSelectedDates,
   cancelButtonText,
   submitButtonText = 'Submit',
-  selectedDatesTitle = 'Selected Dates'
+  selectedDatesTitle = 'Selected Dates',
+  initialDate,
 }) => {
   if (cancelButtonText == null) {
     cancelButtonText = readOnly ? 'Dismiss' : 'Cancel'
@@ -133,6 +134,8 @@ const DatePicker = ({
         cancelButtonText={cancelButtonText}
         submitButtonText={submitButtonText}
         selectedDatesTitle={selectedDatesTitle}
+        initialDate={initialDate}
+        onMonthChange={onMonthChange}
       />
       {/* </DialogContent> */}
     </Dialog>

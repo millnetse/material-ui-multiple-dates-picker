@@ -63,7 +63,8 @@ const Calendar = ({
   onRemoveAtIndex,
   cancelButtonText,
   submitButtonText,
-  selectedDatesTitle
+  selectedDatesTitle,
+  onMonthChange
 }) => {
   const calendar = useRef(null)
   const classes = useStyles()
@@ -74,7 +75,10 @@ const Calendar = ({
 
   const handleMonthChange = useCallback(
     months => {
-      setDisplayDate(displayDate => utils.addMonths(displayDate, months))
+      setDisplayDate(displayDate => {
+        if (onMonthChange) onMonthChange(displayDate, months);
+        utils.addMonths(displayDate, months)
+      })
     },
     [setDisplayDate]
   )
