@@ -77,7 +77,7 @@ const Calendar = ({
     months => {
       setDisplayDate(displayDate => {
         if (onMonthChange) onMonthChange(displayDate, months);
-        utils.addMonths(displayDate, months)
+        return utils.addMonths(displayDate, months)
       })
     },
     [setDisplayDate]
